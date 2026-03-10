@@ -15,16 +15,18 @@ heart = [
 # Display leeren
 display.clear()
 
-# Herz zeichnen
+# Herz zeichnen - jeden Pixel einzeln als kleines Quadrat
 for row_index, row in enumerate(heart):
     for col_index, pixel in enumerate(row):
         if pixel == 1:
-            x = col_index * 10 + 20
-            y = row_index * 10 + 20
-            display.rectangle(filled=True, x1=x, y1=y, x2=x+9, y2=y+9)
+            for dx in range(10):
+                for dy in range(10):
+                    x = col_index * 10 + 20 + dx
+                    y = row_index * 10 + 20 + dy
+                    display.draw.point((x, y))
 
 # Anzeigen
 display.update()
 
 # 5 Sekunden warten
-time.sleep(5) 
+time.sleep(5)
