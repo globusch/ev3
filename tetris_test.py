@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+
+import subprocess
+
+subprocess.call(['sudo', 'systemctl', 'stop', 'brickman'])
+
 """
 Tetris für LEGO EV3 mit ev3dev2
 Display: 178x128 Pixel (Schwarz/Weiß)
@@ -314,6 +320,7 @@ def main():
                 break
             if btn.backspace:
                 return
+              subprocess.call(['sudo', 'systemcl', 'start', 'brickman'])
             time.sleep(0.02)
 
         time.sleep(0.02)
