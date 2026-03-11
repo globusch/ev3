@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-“””
-Tetris für LEGO EV3 mit ev3dev2
-Display: 178x128 Pixel (Schwarz/Weiß)
-Steuerung: EV3-Buttons
-Links/Rechts  → Block bewegen
-Oben          → Block drehen
-Unten         → Block schneller fallen
-Enter         → Hard Drop (sofort fallen)
-Backspace     → Spiel beenden
-“””
-
 import time
 import random
 from ev3dev2.display import Display
