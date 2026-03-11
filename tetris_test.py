@@ -329,4 +329,3 @@ if __name__ == '__main__':
         run_game()
     finally:
         subprocess.call(['sudo', 'systemctl', 'start', 'brickman'])
-  main()
