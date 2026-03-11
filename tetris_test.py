@@ -196,12 +196,12 @@ def run_game(screen, btn, sound):
         if btn.left:
             if is_valid(board, cur_shape, cur_row, cur_col - 1):
                 cur_col -= 1
-            time.sleep(0.15)
+            time.sleep(0.02)
 
         elif btn.right:
             if is_valid(board, cur_shape, cur_row, cur_col + 1):
                 cur_col += 1
-            time.sleep(0.15)
+            time.sleep(0.02)
 
         elif btn.up:
             # Drehen
@@ -210,14 +210,14 @@ def run_game(screen, btn, sound):
             if is_valid(board, new_shape, cur_row, cur_col):
                 rot_idx = new_rot
                 cur_shape = new_shape
-            time.sleep(0.2)
+            time.sleep(0.02)
 
         elif btn.down:
             # Schnell fallen
             if is_valid(board, cur_shape, cur_row + 1, cur_col):
                 cur_row += 1
                 last_fall = now
-            time.sleep(0.05)
+            time.sleep(0.01)
 
         elif btn.enter:
             # Hard Drop
@@ -292,9 +292,9 @@ def main():
                 draw_screen(screen, ["  Tschuess!"])
                 time.sleep(1)
                 return
-            time.sleep(0.05)
+            time.sleep(0.02)
 
-        time.sleep(0.3)  # Entprellung
+        time.sleep(0.02)  # Entprellung
 
         final_score = run_game(screen, btn, sound)
 
@@ -314,9 +314,9 @@ def main():
                 break
             if btn.backspace:
                 return
-            time.sleep(0.05)
+            time.sleep(0.02)
 
-        time.sleep(0.3)
+        time.sleep(0.02)
 
 
 if __name__ == '__main__':
