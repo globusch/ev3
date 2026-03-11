@@ -327,4 +327,9 @@ def main():
 
 
 if __name__ == '__main__':
+  subprocess.call(['sudo', 'systemctl', 'stop', 'brickman'])
+    try:
+        run_game()
+    finally:
+        subprocess.call(['sudo', 'systemctl', 'start', 'brickman'])
     main()
