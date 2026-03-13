@@ -260,15 +260,14 @@ def run_game(screen, btn, sound):
 
                 # Game Over prüfen
                 if not is_valid(board, cur_shape, cur_row, cur_col):
-                        sound.tone([
-                  (600, 100, 20),
-                  (500, 100, 20),
-                  (400, 100, 20),
-                  (300, 150, 20),
-                  (200, 300,  0),
-                  ])
+                    sound.tone([
+                        (600, 100, 20),
+                        (500, 100, 20),
+                        (400, 100, 20),
+                        (300, 150, 20),
+                        (200, 300,  0),
+                    ])
                     running = False
-
             last_fall = now
 
         # ── ZEICHNEN ───────────────────────
