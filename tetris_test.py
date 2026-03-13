@@ -330,8 +330,9 @@ def main():
 
 
 if __name__ == '__main__':
-    subprocess.call(['sudo', 'systemctl', 'stop', 'brickman'])
+    subprocess.call(['sudo', 'systemctl', 'stop', 'brickman'], timeout=10)
     try:
         main()
     finally:
         subprocess.call(['sudo', 'systemctl', 'start', 'brickman'])
+      
