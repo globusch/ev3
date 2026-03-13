@@ -247,7 +247,7 @@ def run_game(screen, btn, sound):
                     score += [0, 100, 300, 500, 800][cleared] * level
                     level = lines_total // 10 + 1
                     fall_interval = max(0.1, 0.8 - (level - 1) * 0.07)
-                    sound.beep()
+                    sound.play_tone(100, 0.5)
 
                 # Neues Stück
                 cur_name = next_name
@@ -260,6 +260,13 @@ def run_game(screen, btn, sound):
 
                 # Game Over prüfen
                 if not is_valid(board, cur_shape, cur_row, cur_col):
+                        sound.tone([
+                  (600, 100, 20),
+                  (500, 100, 20),
+                  (400, 100, 20),
+                  (300, 150, 20),
+                  (200, 300,  0),
+                  ])
                     running = False
 
             last_fall = now
@@ -284,8 +291,8 @@ def main():
         draw_screen(screen, [
             "  TETRIS",
             "",
-            "Enter = Start",
-            "Back  = Beenden",
+            "Mittlerer Button = Start",
+            "Zurück Button    = Beenden",
         ])
 
         # Warten auf Enter oder Backspace
@@ -308,8 +315,8 @@ def main():
             "",
             "  Score: " + str(final_score),
             "",
-            "Enter = Nochmal",
-            "Back  = Beenden",
+            "Mittlerer Button = Nochmal",
+            "Zurück Button    = Beenden",
         ])
 
         # Warten auf Eingabe
