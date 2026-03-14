@@ -247,7 +247,7 @@ def run_game(screen, btn, sound):
                     score += [0, 100, 300, 500, 800][cleared] * level
                     level = lines_total // 10 + 1
                     fall_interval = max(0.1, 0.8 - (level - 1) * 0.07)
-                    sound.play_tone(100, 0.5)
+                    sound.play_tone(500, 0.1)
 
                 # Neues Stück
                 cur_name = next_name
@@ -302,9 +302,9 @@ def main():
                 draw_screen(screen, ["  Tschuess!"])
                 time.sleep(1)
                 return
-            time.sleep(0.02)
+            time.sleep(0.3)
 
-        time.sleep(0.02)  # Entprellung
+        time.sleep(0.3)  # Entprellung
 
         final_score = run_game(screen, btn, sound)
 
